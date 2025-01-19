@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/CMakeFiles/iterators-populate"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/CMakeFiles/iterators-populate.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/CMakeFiles/iterators-populate-complete.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-build.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-configure.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-download.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-install.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-patch.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-test.rule"
+		},
+		{
+			"file" : "/home/mejri/Bureau/SatSolverTemplate-master/build/_deps/iterators-subbuild/iterators-populate-prefix/src/iterators-populate-stamp/iterators-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"iterators-populate"
+		],
+		"name" : "iterators-populate"
+	}
+}

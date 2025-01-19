@@ -45,6 +45,8 @@ namespace sat {
      */
     class Clause {
         // @TODO Private members here
+        std::vector<Literal> lit;
+        unsigned Watcher1, Watcher2;
     public:
 
         /**

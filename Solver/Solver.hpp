@@ -29,6 +29,11 @@ namespace sat {
      */
     class Solver {
         // @TODO private members here
+        unsigned numVariables;
+        std::vector<ClausePointer> clauses;
+        std::vector<TruthValue> model; 
+        std::vector<Literal> unitLiterals; 
+        std::vector<std::vector<ClausePointer>> watchedBg;
     public:
 
         /**

@@ -11,7 +11,7 @@ namespace sat {
     // @TODO implementation here
 
 
-    Variable::Variable(unsigned val): val(val){
+    Variable::Variable(unsigned val): val(val) {
 
     }
 
@@ -20,7 +20,7 @@ namespace sat {
     }
 
     bool Variable::operator==(Variable other) const {
-        return other.get()==val ;
+        return other.get()== val ;
     }
 
     Literal::Literal(unsigned val): val(val) {

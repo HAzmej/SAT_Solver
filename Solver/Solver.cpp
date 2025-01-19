@@ -82,22 +82,25 @@ namespace sat {
     }
 
     bool Solver::unitPropagate() {
-        bool res = true;
-        bool quit = false;
-        
-        while (!quit){
-            quit = true;
+        bool result = true;
 
-            std::vector<Clause> clauses = this->rebase();
+        while (true) {
+            bool hasNewUnit = false;
 
-            for (Clause clause:clauses){
-                bool ouesh = addClause(clause);
-                res = res && ouesh;
-                if (clause.size()==1){
-                    quit = false;
+            for (const Clause& clause : rebase()) {
+                if (!addClause(clause)) {
+                    result = false;
+                }
+                if (clause.size() == 1) {
+                    hasNewUnit = true;
                 }
             }
+
+            if (!hasNewUnit) {
+                break;
+            }
         }
-        return(res);
+
+        return result;
     }
 } // sat
