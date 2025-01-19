@@ -17,18 +17,15 @@ namespace sat {
     }
 
     bool Solver::addClause(Clause clause) {
-        if (clause.isEmpty()) {
+        if (clause.isEmpty()){
             return false;
-        }
-
-        if (clause.size() == 1) {
-            if (falsified(clause[0])) {
-                return false;
-            }
+        } else if (clause.size()==1 && falsified(clause[0])){
+            return false;
+        } else if (clause.size()==1 ){
             assign(clause[0]);
         }
-
-        clauses.push_back(std::make_shared<Clause>(std::move(clause)));
+        ClausePointer clause_pntr =  std::make_shared<Clause>(clause);
+        clauses.push_back(clause_pntr);
         return true;
     }
 
@@ -82,25 +79,27 @@ namespace sat {
     }
 
     bool Solver::unitPropagate() {
-        bool result = true;
+        bool resultat = true;
 
-        while (true) {
-            bool hasNewUnit = false;
-
-            for (const Clause& clause : rebase()) {
-                if (!addClause(clause)) {
-                    result = false;
-                }
+        while (!unitLiterals.empty()){
+            Literal unit = unitLiterals.back();
+            unitLiterals.pop_back();
+            if(!assign(unit)){return false;}
+            std::vector<Clause> new_clauses = rebase();
+            for (const auto& clause :new_clauses){
+                resultat = resultat && addClause(clause);
                 if (clause.size() == 1) {
-                    hasNewUnit = true;
-                }
+                    Literal lit = clause[0];
+                    if (val(var(lit)) == TruthValue::Undefined) {
+                        unitLiterals.push_back(lit);
+                        }
+                    }
             }
 
-            if (!hasNewUnit) {
-                break;
-            }
+            if(unitLiterals.empty()){break;}
+
         }
 
-        return result;
+        return resultat;
     }
 } // sat
